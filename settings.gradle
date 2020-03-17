@@ -1,0 +1,2 @@
+include ':app', ':imooc_voice', ':lib_audio', ':lib_video', ':lib_commin_ui', ':lib_image_loader', ':lib_network', ':lib_pullaive', ':lib_qrcode', ':lib_share', ':lib_update', ':lib_webview'
+rootProject.name='musicAPP'
