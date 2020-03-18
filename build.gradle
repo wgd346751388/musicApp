@@ -1,10 +1,26 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+    apply from  :this.rootProject.file('imooc.gradle')
 
 buildscript {
     repositories {
         google()
         jcenter()
-        
+        mavenCentral()
+
+        maven{
+            url 'http://localhost:8081/repository/imooc_releases/'
+            credentials{
+                username 'admin'
+                password 'admin123'
+            }
+        }
+        maven{
+            url 'http://localhost:8081/repository/imooc_snapshot/'
+            credentials{
+                username 'admin'
+                password 'admin123'
+            }
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0'
@@ -17,7 +33,24 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        mavenCentral()
+        maven {
+            url "https://jitpack.io"
+        }
+        maven{
+            url 'http://localhost:8081/repository/imooc_releases/'
+            credentials{
+                username 'admin'
+                password 'admin123'
+            }
+        }
+        maven{
+            url 'http://localhost:8081/repository/imooc_snapshot/'
+            credentials{
+                username 'admin'
+                password 'admin123'
+            }
+        }
     }
 }
 
