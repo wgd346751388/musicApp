@@ -21,16 +21,11 @@ import okhttp3.Response;
  *      处理json类型响应
  */
 
-public class CommonJsonCallbcak implements Callback {
-    protected  final String EMPTY_MSG = "";
+public class CommonJsonCallbcak extends BaseCommonCallback {
 
-    protected final int NETWORK_ERROR = -1;
-    protected final int JSON_ERROR = -2;
-    protected final int OTHER_ERROR = -3;
 
     private Class<?> mClass;
     private DisposeDataListener mListener;
-    private Handler mDeliveryHandler;
 
     public CommonJsonCallbcak(DisposeDataHandle handle){
         mClass=handle.mClass;

@@ -27,5 +27,5 @@ dependencies {
     implementation this.rootProject.depsLibs.appcompat
     implementation this.rootProject.depsLibs.support
     implementation project(':lib_commin_ui')
-
+    implementation project(':lib_network')
 }
