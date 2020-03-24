@@ -1,10 +1,12 @@
 apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'maven'
+
 
 def pomName = this.getName()
 def pomVersion = '1.0.0-SNAPSHOT'
 def pomDescription = 'the audio library for all projects'
-
+def versionNumber = 1
 android {
     compileSdkVersion this.rootProject.android.compileSdkVersion
     defaultConfig {
@@ -13,6 +15,7 @@ android {
         versionCode this.rootProject.android.versionCode
         versionName this.rootProject.android.versionName
         consumerProguardFiles 'consumer-rules.pro'
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -28,6 +31,29 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation this.rootProject.depsLibs.appcompat
     implementation this.rootProject.depsLibs.support
+
+    compileOnly rootProject.depsLibs.design
+    compileOnly rootProject.depsLibs.recyclerview
+
+    //占位主工程的greenDao类库
+    compileOnly rootProject.depsLibs.greendao
+    //占位主工程的eventbus库
+    compileOnly rootProject.depsLibs.eventbus
+    //占位主工程的rxjava库
+    compileOnly rootProject.depsLibs.rxjava
+
+    implementation 'net.zetetic:android-database-sqlcipher:3.4.0@aar'
+
+    //占位主工程自己源码库
+    compileOnly project(':lib_image_loader')
+    compileOnly project(':lib_commin_ui')
+    compileOnly project(':lib_share')
+
+}
+greendao {
+    //其它配置保持默认,有需要再研究
+    schemaVersion 1 //数据库版本号
+    daoPackage 'com.example.lib_audio.mediaplayer.db' //dao,master类所在包
 
 }
 

@@ -4,6 +4,7 @@ package com.example.lib_network.Response;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import com.example.lib_network.Response.listener.DisposeDataHandle;
 import com.example.lib_network.Response.listener.DisposeDataListener;
@@ -49,6 +50,7 @@ public class CommonJsonCallbcak extends BaseCommonCallback {
         mDeliveryHandler.post(new Runnable() {
             @Override
             public void run() {
+                Log.e("返回数据",result);
                 handleResponse(result);
             }
 

@@ -5,12 +5,12 @@ android {
 
 
     defaultConfig {
-        applicationId this.rootProject.android.applicationId
+        applicationId "com.example.imooc_voice"
         minSdkVersion this.rootProject.android.minSdkVersion
         targetSdkVersion this.rootProject.android.targetSdkVersion
         versionCode this.rootProject.android.versionCode
         versionName this.rootProject.android.versionName
-        multiDexEnabled this.rootProject.android.multiDexEnabled
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -26,6 +26,11 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation this.rootProject.depsLibs.appcompat
     implementation this.rootProject.depsLibs.support
+    implementation this.rootProject.depsLibs.eventbus
     implementation project(':lib_commin_ui')
     implementation project(':lib_network')
+    implementation project(':lib_image_loader')
+    implementation project(':lib_audio')
+
+
 }

@@ -1,5 +1,7 @@
 package com.example.lib_network.request;
 
+import android.util.Log;
+
 import java.io.File;
 import java.util.Map;
 
@@ -28,12 +30,12 @@ public class CommonRequest {
      * @return
      */
     public static Request createPostRequest(String url,RequestParams params,RequestParams headers){
+        Log.e("请求地址",url);
         FormBody.Builder mFormBodyBuilder = new FormBody.Builder();
         if(params !=null ){
             for (Map.Entry<String,String >entry:params.urlParams.entrySet()) {
                 //参数遍历
                 mFormBodyBuilder.add(entry.getKey(),entry.getValue());
-
             }
         }
         Headers.Builder mHeaderBuilder = new Headers.Builder();
@@ -96,6 +98,7 @@ public class CommonRequest {
                 mHeaderBuilder.add(entry.getKey(),entry.getValue());
             }
         }
+        Log.d("请求地址",url);
         return  new Request.Builder()
                 .url(url)
                 .headers(mHeaderBuilder.build())

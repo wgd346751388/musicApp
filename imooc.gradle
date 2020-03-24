@@ -1,15 +1,18 @@
 ext{
     android = [
-            applicationId : 'com.example.musicapp',
+            applicationId : 'com.example.imooc_voice',
             compileSdkVersion: 28,
             minSdkVersion    : 19,
             targetSdkVersion : 28,
             versionCode      : 1,
             versionName      : "1.0",
-            multiDexEnabled      : true,
+
     ]
     depsVersion = [
             appcompat : '28.0.0',
+            design        : '28.0.0',
+            recyclerview  : '28.0.0',
+            constraint    : '1.1.3',
             support : '28.0.0',
             magicindicator: '1.5.0',
             okhttp        : '3.3.0',
@@ -17,6 +20,8 @@ ext{
             rxandroid     : '2.1.1',
             glide         : '4.9.0',
             glidecompiler : '4.9.0',
+            eventbus      : '3.1.1',
+            greendao      : '3.2.2',
     ]
     depsLibs = [
          appcompat   : "com.android.support:appcompat-v7:${depsVersion.appcompat}",
@@ -27,6 +32,11 @@ ext{
          glidecompiler : "com.github.bumptech.glide:compiler:${depsVersion.glidecompiler}",
          rxjava        : "io.reactivex.rxjava2:rxjava:${depsVersion.rxjava}",
          rxandroid     : "io.reactivex.rxjava2:rxandroid:${depsVersion.rxandroid}",
+         eventbus      : "org.greenrobot:eventbus:${depsVersion.eventbus}",
+         greendao      : "org.greenrobot:greendao:${depsVersion.greendao}",
+         design        : "com.android.support:design:${depsVersion.design}",
+         recyclerview  : "com.android.support:recyclerview-v7:${depsVersion.recyclerview}",
+         constraint    : "com.android.support.constraint:constraint-layout:${depsVersion.constraint}",
 
 
     ]
